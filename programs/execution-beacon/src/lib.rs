@@ -12,7 +12,7 @@ pub mod execution_beacon {
         ctx: Context<EmitExecution>,
         quote_id: [u8; 32],
     ) -> Result<()> {
-        emit!(ExecutionObserved {
+        emit_cpi!(ExecutionObserved {
             payer: ctx.accounts.payer.key(),
             quote_id,
         });
@@ -20,6 +20,7 @@ pub mod execution_beacon {
     }
 }
 
+#[event_cpi]
 #[derive(Accounts)]
 pub struct EmitExecution<'info> {
     #[account(signer)]
