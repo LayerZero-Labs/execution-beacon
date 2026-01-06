@@ -23,7 +23,6 @@ pub mod execution_beacon {
 #[event_cpi]
 #[derive(Accounts)]
 pub struct EmitExecution<'info> {
-    #[account(signer)]
     pub payer: Signer<'info>,
 }
 
