@@ -1,5 +1,7 @@
 [toolchain]
 package_manager = "yarn"
+anchor_version = "0.32.1" # anchor-cli
+solana_version = "2.3.0"  # solana-cli
 
 [features]
 resolution = true
