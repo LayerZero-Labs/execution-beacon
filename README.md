@@ -103,3 +103,4 @@ cargo build-sbf --force-tools-install
 ### Run tests
 ```
 anchor test
+```
