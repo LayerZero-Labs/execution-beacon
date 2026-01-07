@@ -43,11 +43,11 @@ cargo install --git https://github.com/solana-foundation/anchor --tag v0.32.1 an
 
 ## Build
 
-### Prepare the Solana OFT Program keypair
+### Prepare the Solana Program keypair
 
-Create the OFT program ID keypair by running:
+Create the program ID keypair by running:
 ```
-anchor keys sync -p oft
+anchor keys sync -p execution_beacon
 ```
 
 View the program ID's based on the generated keypairs:
@@ -57,20 +57,18 @@ anchor keys list
 
 You will see an output such as:
 ```
-oft: FfUKyGjrUREsjBhsykyAHUMy12qVHbSsuCiqSSAaJpwp
+execution_beacon: FfUKyGjrUREsjBhsykyAHUMy12qVHbSsuCiqSSAaJpwp
 ```
 
-Copy the OFT program ID value for use in the build step later.
+Copy the program ID value for use in the build step later.
 
-### Building the Solana OFT Program
+### Building the Solana Program
 
 Ensure you have Docker running before running the build command.
 
 ```
-anchor build -v -e OFT_ID=<OFT_PROGRAM_ID>
+anchor build -v
 ```
-
-Where `<OFT_PROGRAM_ID>` is replaced with your OFT program ID copied from the previous step.
 
 > :information_source: For a breakdown of expected rent-exempt costs before deployment, see https://docs.layerzero.network/v2/developers/solana/technical-reference/solana-guidance#previewing-solana-rent-costs.
 
@@ -84,7 +82,7 @@ The `deploy` command will run with a priority fee. Read the section on ['Deployi
 #### Run the deploy command
 
 ```bash
-solana program deploy --program-id target/deploy/oft-keypair.json target/verifiable/oft.so -u devnet --with-compute-unit-price <COMPUTE_UNIT_PRICE_IN_MICRO_LAMPORTS>
+solana program deploy --program-id target/deploy/execution_beacon-keypair.json target/verifiable/execution_beacon.so -u devnet --with-compute-unit-price <COMPUTE_UNIT_PRICE_IN_MICRO_LAMPORTS>
 ```
 
 <details>
