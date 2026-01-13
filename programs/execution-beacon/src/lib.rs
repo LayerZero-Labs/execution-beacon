@@ -1,8 +1,6 @@
 use anchor_lang::prelude::*;
-use anchor_lang::solana_program::instruction::{AccountMeta, Instruction};
-use anchor_lang::solana_program::program::invoke;
 
-declare_id!("mPe3a6UtyX7gQmjfdsqEWRC2V72RRZM5FQZ1BAH44e1");
+declare_id!("BRoueHsu3h2SfEse9ohXipm1R9uRGRSe3zPYsAT8RySr");
 
 #[program]
 pub mod execution_beacon {

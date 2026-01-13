@@ -8,14 +8,17 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-solana_wrapper = "5HKRQJKjw4QkDsFGP4YibxqZWJTyNtSswxXNwdAy6FSi"
+execution_beacon = "5HKRQJKjw4QkDsFGP4YibxqZWJTyNtSswxXNwdAy6FSi"
+
+[programs.mainnet]
+execution_beacon = "BRoueHsu3h2SfEse9ohXipm1R9uRGRSe3zPYsAT8RySr"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
-wallet = "~/.config/solana/id.json"
+cluster = "mainnet"
+wallet = "~/solana-deploy-keypair.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
